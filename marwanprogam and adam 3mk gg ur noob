@@ -1,0 +1,96 @@
+local allowedUsernames = {
+    "vmarwan6",
+    "sdukfherkf",
+    "a7_a25",
+    "mostafa99047",
+    "marwan_proffesional",
+    "adamnew399",
+    "3bdo3694",
+    "KOZMO_YASTAH222",
+    "ahmed_targeter",
+    "marwanprogam",
+    "TIK_KARAS",
+    "adam_mm02",
+}
+
+local player = game.Players.LocalPlayer
+local playerName = player.Name
+
+local function runScript()
+    -- Your code here: This is the code that will run for the allowed users
+    loadstring(game:HttpGet("https://pastebin.com/raw/nyB0MHic"))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/rouxhaver/scripts-2/main/rejoin%20button%20for%20kick%20message.lua", true))()
+end
+
+local function createHintGui()
+    local gui = Instance.new("ScreenGui")
+    gui.Name = "HintGui"
+    gui.DisplayOrder = 10 -- Set the display order to ensure the hint message is in the foreground
+
+    local blur = Instance.new("BlurEffect")
+    blur.Size = 20 -- Set the size of the blur effect to make it visible
+    blur.Parent = game:GetService("Workspace").CurrentCamera
+
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(0.5, 0, 0.2, 0) -- Adjust the size of the frame as desired
+    frame.Position = UDim2.new(0.5, -frame.Size.X.Offset/2, 0.5, -frame.Size.Y.Offset/2) -- Center the frame
+    frame.AnchorPoint = Vector2.new(0.5, 0.5)
+    frame.BackgroundTransparency = 0.5 -- Adjust the transparency of the frame as desired
+    frame.BackgroundColor3 = Color3.new(0, 0, 0) -- Set the background color to black
+    frame.BorderSizePixel = 0
+    frame.Parent = gui
+
+    local label = Instance.new("TextLabel")
+    label.BackgroundTransparency = 1
+    label.Size = UDim2.new(1, 0, 1, 0)
+    label.Font = Enum.Font.GothamSemibold
+    label.Text = "غير مسموح لك " -- Set the message text here
+    label.TextColor3 = Color3.new(1, 1, 1)
+    label.TextSize = 50 -- Increase the text size to 50
+    label.TextWrapped = true
+    label.Parent = frame
+
+    gui.Parent = player.PlayerGui
+
+    return gui, frame, blur
+end
+
+local function animateHintMessage(frame, blur)
+    local originalSize = frame.Size
+    frame.Size = UDim2.new(0, 0, 0, 0) -- Start with a size of zero
+
+    local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+    local tweenBlur = game:GetService("TweenService"):Create(blur, tweenInfo, { Size = 20 }) -- Set the size of the blur effect to make it visible
+    local tweenFrame = game:GetService("TweenService"):Create(frame, tweenInfo, { Size = originalSize })
+    tweenBlur:Play()
+    tweenFrame:Play()
+end
+
+local function fadeOut(frame, blur)
+    local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+    local tween = game:GetService("TweenService"):Create(frame, tweenInfo, { Position = UDim2.new(0.5, -frame.Size.X.Offset/2, -0.5, -frame.Size.Y.Offset/2) })
+    tween.Completed:Connect(function()
+        frame.Parent:Destroy() -- Destroy the GUI after the animation completes
+        blur:Destroy() -- Destroy the blur effect
+    end)
+    tween:Play()
+end
+
+local function notInvited()
+    -- This function will run if the player is not on the list
+
+    local gui, frame, blur = createHintGui()
+
+    animateHintMessage(frame, blur)
+
+    wait(10) -- Wait for the display time of the hint message
+
+    fadeOut(frame, blur)
+end
+
+if table.find(allowedUsernames, playerName) then
+    runScript()
+else
+    notInvited()
+end
