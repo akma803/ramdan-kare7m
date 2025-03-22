@@ -1,86 +1,34 @@
-allowedUsernames = {
-    "adam_mm02",
-    "vmarwan6",
-    "marwanprogam",
-    "3bdo3649", 
-}
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
 
-local player = game.Players.LocalPlayer
-local playerName = player.Name
-local TweenService = game:GetService("TweenService")
-local playerGui = player:WaitForChild("PlayerGui")
+local Window = OrionLib:MakeWindow({Name = "😈cop hub😈", HidePremium = false, SaveConfig = true, ConfigFolder = "مطور السكربت marwan and adam"})
 
--- دالة لتشغيل السكربت الخاص بالمستخدمين المسموح لهم
-local function runAllowedScript()
-    -- يمكنك تعديل الروابط أو إضافة أكواد أخرى هنا
-    pcall(function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/akma803/ramdan-kare7m/refs/heads/main/team%20R2%203mk%20yaad'))()
-    end)
-end
 
--- دالة لإنشاء واجهة الرسالة (GUI) عند عدم السماح
-local function createNotAllowedGui()
-    local screenGui = Instance.new("ScreenGui")
-    screenGui.Name = "NotAllowedGui"
-    screenGui.ResetOnSpawn = false
-    screenGui.Parent = playerGui
+local Tab = Window:MakeTab({
+	Name = "سكربتات كل شيء",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 
-    -- إضافة تأثير بلور على الكاميرا
-    local camera = workspace.CurrentCamera
-    local blurEffect = Instance.new("BlurEffect")
-    blurEffect.Size = 0
-    blurEffect.Parent = camera
+local Section = Tab:AddSection({
+	Name = "the important script"
+})
 
-    -- إعداد الإطار الذي سيحتوي على الرسالة
-    local frame = Instance.new("Frame")
-    frame.Size = UDim2.new(0, 0, 0, 0) -- بدءًا من حجم صفر
-    frame.Position = UDim2.new(0.5, 0, 0.5, 0)
-    frame.AnchorPoint = Vector2.new(0.5, 0.5)
-    frame.BackgroundColor3 = Color3.new(0, 0, 0)
-    frame.BackgroundTransparency = 0.5
-    frame.BorderSizePixel = 0
-    frame.Parent = screenGui
 
-    local targetSize = UDim2.new(0.5, 0, 0.2, 0) -- الحجم النهائي للإطار
+OrionLib:MakeNotification({
+	Name = "hello bro 🗿!",
+	Content = "Notification content... منور ياغالي",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
 
-    -- إعداد التسمية لعرض الرسالة
-    local textLabel = Instance.new("TextLabel")
-    textLabel.Size = UDim2.new(1, 0, 1, 0)
-    textLabel.Position = UDim2.new(0, 0, 0, 0)
-    textLabel.BackgroundTransparency = 1
-    textLabel.Text = "غير مسموح لك"
-    textLabel.Font = Enum.Font.GothamSemibold
-    textLabel.TextColor3 = Color3.new(1, 1, 1)
-    textLabel.TextScaled = true
-    textLabel.Parent = frame
+Tab:AddButton({
+	Name = "السكربت تحت صيانه 🗿😮‍💨! ",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
 
-    -- تأثيرات التحريك: تكبير البلور والإطار
-    local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
-    local blurTween = TweenService:Create(blurEffect, tweenInfo, {Size = 20})
-    blurTween:Play()
-
-    local frameTween = TweenService:Create(frame, tweenInfo, {Size = targetSize})
-    frameTween:Play()
-
-    return screenGui, frame, blurEffect
-end
-
--- دالة لإظهار الرسالة ثم إخفائها بعد فترة
-local function showNotAllowed()
-    local screenGui, frame, blurEffect = createNotAllowedGui()
-    wait(10) -- عرض الرسالة لمدة 10 ثواني
-
-    -- تأثير إخفاء بسيط (يمكنك تعديله حسب الرغبة)
-    local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
-    local fadeTween = TweenService:Create(frame, tweenInfo, {BackgroundTransparency = 1})
-    fadeTween:Play()
-    wait(0.5)
-    screenGui:Destroy()
-    blurEffect:Destroy()
-end
-
-if table.find(allowedUsernames, playerName) then
-    runAllowedScript()
-else
-    showNotAllowed()
-end
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
