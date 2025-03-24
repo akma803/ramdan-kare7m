@@ -1,10 +1,10 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "😈cop hub😈", HidePremium = false, SaveConfig = true, ConfigFolder = "مطور السكربت marwan and adam"})
+local Window = OrionLib:MakeWindow({Name = "teem R2 hub", HidePremium = false, SaveConfig = true, ConfigFolder = "مطور السكربت marwan and adam"})
 
 
 local Tab = Window:MakeTab({
-	Name = "سكربتات كل شيء",
+	Name = "  all important scripts",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -16,14 +16,14 @@ local Section = Tab:AddSection({
 
 OrionLib:MakeNotification({
 	Name = "hello bro 🗿!",
-	Content = "Notification content... منور ياغالي",
+	Content = "Notification content... ammmm hello? ",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
 
 
 Tab:AddButton({
-	Name = "سكربت مروان عمي وعم عيالي🫡!",
+	Name = "  marwan script",
 	Callback = function()
       		loadstring(game:HttpGet("https://pastebin.com/raw/2hZZ2Wu2"))()
   	end    
@@ -31,7 +31,7 @@ Tab:AddButton({
 
 
 Tab:AddButton({
-	Name = "سكربت الرحمة!",
+	Name = "atomic hub +18",
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/n0kc/AtomicHub/main/Map-Al-Biout.lua"))()
   	end    
@@ -39,7 +39,7 @@ Tab:AddButton({
 
 
 Tab:AddButton({
-	Name = "(سكربت التحول (مش بيظهر للناس !",
+	Name = "   ghub(monestr)  ",
 	Callback = function()
       		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-GHub-21892"))()
   	end    
@@ -47,9 +47,9 @@ Tab:AddButton({
 
 
 Tab:AddButton({
-	Name = " سكربت الكنبه ممكن مش يشتغل بسبب مشكله!",
+	Name = "    fling gui   !",
 	Callback = function()
-      		loadstring(game: httpget('https://rawgithubbuserconext.com/edgeiy/inifintiyield/master/source'))() 
+      		
   	end    
 })
  Tab:AddColorpicker({
@@ -66,14 +66,14 @@ Default = <color3> - The default value of the colorpicker.
 Callback = <function> - The function of the colorpicker.
 ]]
 Tab:AddButton({
-	Name = " سكربت noclip!",
+	Name = "  noclip!",
 	Callback = function()
       		loadstring(game:HttpGet("https://pastebin.com/raw/iZ7xqzyA"))();
   	end    
 })
 
 Tab:AddButton({
-	Name = " سكربت طيران!",
+	Name = " vfly !",
 	Callback = function()
       		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Android-vfly-24974"))()
   	end    
@@ -85,7 +85,7 @@ Callback = <function> - The function of the button.
 ]]
 
 Tab:AddButton({
-	Name =" سكربت تحكم في شات الاعب!",
+	Name ="  Player chat control script    ",
 	Callback = function()
       		loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Chat-Haxx-6128"))()
   	end    
@@ -97,7 +97,7 @@ Callback = <function> - The function of the button.
 ]]
 
 local Tab = Window:MakeTab({
-	Name = "ام ام تو",
+	Name = "mmm2 ",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -108,7 +108,7 @@ Icon = <string> - The icon of the tab.
 PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 Tab:AddButton({
-	Name = "سكربت ام ام تو!",
+	Name = " mm2 script!",
 	Callback = function()
       		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-YARHM-12403"))()
   	end    
@@ -122,7 +122,7 @@ Callback = <function> - The function of the button.
 
 
 Tab:AddButton({
-	Name = "سكربت شيفت لوك!",
+	Name = "shift look  !",
 	Callback = function()
       		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Shift-Lock-30701"))()
   	end    
@@ -134,7 +134,7 @@ Callback = <function> - The function of the button.
 ]]
 
 Tab:AddButton({
-	Name = "سكربت ام ام تو!",
+	Name = " mmm2 script !",
 	Callback = function()
       		loadstring(game:HttpGet('https://raw.githubusercontent.com/katrina367/ScriptBlox-Projects/main/OblivionAutoEXEV1'))()
   	end    
@@ -146,7 +146,7 @@ Callback = <function> - The function of the button.
 ]]
 
 Tab:AddButton({
-	Name = "سكربت ام تم تو!",
+	Name = " mm2 script!",
 	Callback = function()
       		loadstring(game:HttpGet("http://darkhub.xyz/remote-script.lua", true))()
   	end    
@@ -168,7 +168,7 @@ Icon = <string> - The icon of the tab.
 PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 Tab:AddButton({
-	Name = "سكربت بروك هافين!",
+	Name = "sp hub brookhaven  !",
 	Callback = function()
       		loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-SP-Hub-New-Uptade-2-March-2025-30618"))()
   	end    
@@ -180,7 +180,7 @@ Callback = <function> - The function of the button.
 ]]
 
 Tab:AddButton({
-	Name = "سكربت بروك هافين!",
+	Name = "s7 hub  !",
 	Callback = function()
       		loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-S7-hub-30753"))()
   	end    
@@ -192,7 +192,7 @@ Callback = <function> - The function of the button.
 ]]
 
 Tab:AddButton({
-	Name = "تطير الناس!",
+	Name = "TELEKINESIS !",
 	Callback = function()
       		loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Telekinesis-12332"))()
   	end    
@@ -215,7 +215,7 @@ Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
 local Tab = Window:MakeTab({
-	Name = "تحكم في شخصيتك",
+	Name = "MAIN  ",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -227,7 +227,7 @@ PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 
 Tab:AddSlider({
-	Name = "تحكم بالشخصيه",
+	Name = "WALKSPEED ",
 	Min = 16,
 	Max = 300,
 	Default = 5,
@@ -251,7 +251,7 @@ Callback = <function> - The function of the slider.
 
 Tab:AddSlider({
 	Name = "تحكم بالشخصيه",
-	Min = 30,
+	Min = 50,
 	Max = 300,
 	Default = 5,
 	Color = Color3.fromRGB(255,255,255),
@@ -272,9 +272,9 @@ Callback = <function> - The function of the slider.
 ]]
 
 Tab:AddDropdown({
-	Name = "سكربتات",
+	Name = "scripts",
 	Default = "1",
-	Options = {"script fling", "سكربت من صنع عبدو"},
+	Options = {"script fling", "  3bdo3649 hub "},
 	Callback = function(Value)
 		loadstring(game:HttpGet('https://pastebin.com/raw/7GuxdqXS'))()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/gg-mi7/Neco-Scripts/refs/heads/main/BetterFEYeetGUI.lua"))()
@@ -289,8 +289,8 @@ Callback = <function> - The function of the dropdown.
 ]]
 
 Tab:AddTextbox({
-	Name = "سبام شات",
-	Default = "اكتب هنا اي حاجه وهيشتغل",
+	Name = "spam chat ",
+	Default = " Here ",
 	TextDisappear = true,
 	Callback = function(Value)
 		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Chat-Spammer-29513"))()
@@ -355,7 +355,7 @@ Callback = <function> - The function of the button.
 ]]
 
 Tab:AddButton({
-	Name = "اسم حسابي روب adam_mm02!",
+	Name = "my account adam_mm02!",
 	Callback = function()
       		print("button pressed")
   	end    
@@ -425,6 +425,14 @@ Name = <string> - The name of the tab.
 Icon = <string> - The icon of the tab.
 PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
+
+local Section = Tab:AddSection({
+	Name = "wait for scripts"
+})
+--[[
+Name = <string> - The name of the section.
+]]
+
 
 local Tab = Window:MakeTab({
 	Name = "tapping legends ",
