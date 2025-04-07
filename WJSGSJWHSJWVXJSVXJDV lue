@@ -49,9 +49,9 @@ Time = <number> - The duration of the notfication.
 ]]
 
 Tab:AddButton({
-	Name = "arbic",
+	Name = "arbik",
 	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/akma803/adom-hub/refs/heads/main/mphzrsh%20ya%20mtnak%20yaars'))()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/akma803/ramdan-kare7m/refs/heads/main/doma'))()
   	end    
 })
 
