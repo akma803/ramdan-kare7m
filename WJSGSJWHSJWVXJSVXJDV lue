@@ -1,73 +1,89 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-
-local Window = OrionLib:MakeWindow({Name = "Choose the language  ", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
-
---[[
-Name = <string> - The name of the UI.
-HidePremium = <bool> - Whether or not the user details shows Premium status or not.
-SaveConfig = <bool> - Toggles the config saving in the UI.
-ConfigFolder = <string> - The name of the folder where the configs are saved.
-IntroEnabled = <bool> - Whether or not to show the intro animation.
-IntroText = <string> - Text to show in the intro animation.
-IntroIcon = <string> - URL to the image you want to use in the intro animation.
-Icon = <string> - URL to the image you want displayed on the window.
-CloseCallback = <function> - Function to execute when the window is closed.
-]]
-
-local Tab = Window:MakeTab({
-	Name = " choose the language ",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() --This Will Load The Script Code
+local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
+  local Window = OrionLib:MakeWindow({
+    Name = "المفتاح ",
+    HidePremium = false,
+    SaveConfig = false,           
+    ConfigFolder = nil,       
+    IntroEnabled = true,
+    IntroText = "Welcome, " .. game.Players.LocalPlayer.Name,
+    IntroIcon = "rbxassetid://82778010291487"
 })
 
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
+function MakeScriptHub()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/akma803/adam-and-marwan-hub/refs/heads/main/marwan%20and%20adam%20hub'))() --Put The Script That Will Load If The Key Is Correct Here
+end
 
-local Section = Tab:AddSection({
-	Name = "ammm what sigma? 🙂"
-})
-
---[[
-Name = <string> - The name of the section.
-]]
 
 OrionLib:MakeNotification({
-	Name = "hello? ",
-	Content = "hello im make ok? ",
+	Name = "Logged In!",
+	Content = "You need key "..Player.Name..".",
 	Image = "rbxassetid://4483345998",
 	Time = 5
-})
+}) --Notification
 
---[[
-Title = <string> - The title of the notification.
-Content = <string> - The content of the notification.
-Image = <string> - The icon of the notification.
-Time = <number> - The duration of the notfication.
-]]
+getgenv().Key = "adomhub" --Put The Correct Key Here
+getgenv().KeyInput = "string" --Require For The Key To Work
+
+local Tab = Window:MakeTab({
+	Name = "مفتاح",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+}) --Making A Tab
+
+Tab:AddTextbox({
+	Name = "المفتاح",
+	Default = " حط هنا المفتاح.",
+	TextDisappear = true,
+	Callback = function(Value)
+		getgenv().KeyInput = Value
+	end	  
+}) --You Will Enter The Key Here
 
 Tab:AddButton({
-	Name = "arbik",
-	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/akma803/ramdan-kare7m/refs/heads/main/doma'))()
-  	end    
-})
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
+    Name = " انقر هنا عندما تكتب المفتاح",
+    Callback = function()
+        if getgenv().KeyInput == getgenv().Key then
+            OrionLib:MakeNotification({
+                Name = "يتاكد ",
+                Content = "Checking The Key You Entered",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = " !صحيح",
+                Content = "صحيح.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(1)
+            OrionLib:Destroy()
+            wait(.3)
+            MakeScriptHub()
+        else
+           OrionLib:MakeNotification({
+                Name = " يتأكد ",
+                Content = "همممممممم",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = " مفتاح خطأ😔😮‍💨 !",
+                Content = ".",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+}) --This Will Check The Key You Entered
 
 Tab:AddButton({
-	Name = "english",
+	Name = "انسخ المفتاح ",
 	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/akma803/ramdan-kare7m/refs/heads/main/ledjdkdbdkdndksnxksjxowblxbekxsbxkebxkshsowbzksbsisbsjsbsjsbdjsh%20lue'))()
+      		setclipboard("https://discord.gg/MAjFE6bz") --This Will Copy The Link Of The Key
   	end    
-})
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
+}) 
+    
+OrionLib:Init() --Require If The Script Is Done
