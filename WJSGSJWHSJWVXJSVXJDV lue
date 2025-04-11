@@ -1,89 +1,54 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() --This Will Load The Script Code
-local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
-  local Window = OrionLib:MakeWindow({
-    Name = "المفتاح ",
-    HidePremium = false,
-    SaveConfig = false,           
-    ConfigFolder = nil,       
-    IntroEnabled = true,
-    IntroText = "Welcome, " .. game.Players.LocalPlayer.Name,
-    IntroIcon = "rbxassetid://82778010291487"
-})
+-- StarterPlayerScripts (LocalScript)
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+screenGui.ResetOnSpawn = true
 
-function MakeScriptHub()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/akma803/adam-and-marwan-hub/refs/heads/main/marwan%20and%20adam%20hub'))() --Put The Script That Will Load If The Key Is Correct Here
+local frame = Instance.new("Frame")
+frame.Parent = screenGui
+frame.Size = UDim2.new(0, 600, 0, 200)
+frame.Position = UDim2.new(0.5, -300, 0.5, -100)
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame.BackgroundTransparency = 0.5
+frame.Active = true
+frame.Draggable = false
+
+local uiCorner = Instance.new("UICorner")
+uiCorner.Parent = frame
+uiCorner.CornerRadius = UDim.new(0, 12)
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Parent = frame
+textLabel.Size = UDim2.new(1, 0, 1, 0)
+textLabel.Position = UDim2.new(0, 0, 0, 0)
+textLabel.BackgroundTransparency = 1
+textLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+textLabel.TextScaled = true
+textLabel.Font = Enum.Font.GothamBold
+textLabel.Text = "تم التحميل... "
+
+local loadingTexts = {"Loading.", "Loading..", "Loading..."}
+local i = 1
+
+for t = 1, 10 do
+	textLabel.Text = loadingTexts[i]
+	i = i + 1
+	if i > #loadingTexts then
+		i = 1
+	end
+	wait(1)
 end
 
+textLabel.Text = "loading is done"
+wait(2)
 
-OrionLib:MakeNotification({
-	Name = "Logged In!",
-	Content = "You need key "..Player.Name..".",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-}) --Notification
+-- إخفاء الـ GUI بالكامل بعد 2 ثانية
+screenGui:Destroy()
 
-getgenv().Key = "adomhub" --Put The Correct Key Here
-getgenv().KeyInput = "string" --Require For The Key To Work
+-- تأكد من أن السكربت سيتم تحميله وتشغيله بعد إخفاء الـ GUI
+local success, err = pcall(function()
+loadstring(game:HttpGet('https://pastebin.com/raw/byzwTQth'))()	
+end)
 
-local Tab = Window:MakeTab({
-	Name = "مفتاح",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-}) --Making A Tab
-
-Tab:AddTextbox({
-	Name = "المفتاح",
-	Default = " حط هنا المفتاح.",
-	TextDisappear = true,
-	Callback = function(Value)
-		getgenv().KeyInput = Value
-	end	  
-}) --You Will Enter The Key Here
-
-Tab:AddButton({
-    Name = " انقر هنا عندما تكتب المفتاح",
-    Callback = function()
-        if getgenv().KeyInput == getgenv().Key then
-            OrionLib:MakeNotification({
-                Name = "يتاكد ",
-                Content = "Checking The Key You Entered",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-            wait(2)
-            OrionLib:MakeNotification({
-                Name = " !صحيح",
-                Content = "صحيح.",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-            wait(1)
-            OrionLib:Destroy()
-            wait(.3)
-            MakeScriptHub()
-        else
-           OrionLib:MakeNotification({
-                Name = " يتأكد ",
-                Content = "همممممممم",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-            wait(2)
-            OrionLib:MakeNotification({
-                Name = " مفتاح خطأ😔😮‍💨 !",
-                Content = ".",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-        end
-    end
-}) --This Will Check The Key You Entered
-
-Tab:AddButton({
-	Name = "انسخ المفتاح ",
-	Callback = function()
-      		setclipboard("https://discord.gg/MAjFE6bz") --This Will Copy The Link Of The Key
-  	end    
-}) 
-    
-OrionLib:Init() --Require If The Script Is Done
+if not success then
+	warn("حدث خطأ أثناء تنفيذ السكربت: " .. err)
+end
