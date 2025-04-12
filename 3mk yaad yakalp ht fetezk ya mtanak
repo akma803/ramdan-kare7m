@@ -1,145 +1,61 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
+-- تعديل (upd): تصحيح كتابة "arbic" إلى "Arabic"
 
-local Window = OrionLib:MakeWindow({Name = "سكربت امجد✨💥", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+-- إنشاء الـ ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "LanguageMenu"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
---[[
-Name = <string> - The name of the UI.
-HidePremium = <bool> - Whether or not the user details shows Premium status or not.
-SaveConfig = <bool> - Toggles the config saving in the UI.
-ConfigFolder = <string> - The name of the folder where the configs are saved.
-IntroEnabled = <bool> - Whether or not to show the intro animation.
-IntroText = <string> - Text to show in the intro animation.
-IntroIcon = <string> - URL to the image you want to use in the intro animation.
-Icon = <string> - URL to the image you want displayed on the window.
-CloseCallback = <function> - Function to execute when the window is closed.
-]]
+-- إنشاء الـ Frame الأساسي
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(0, 400, 0, 250)
+mainFrame.Position = UDim2.new(0.5, -200, 0.5, -125)
+mainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
+mainFrame.BorderSizePixel = 0
+mainFrame.Parent = screenGui
 
-local Tab = Window:MakeTab({
-	Name = "Brookhaven",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+-- TextLabel لعنوان الاختيار
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Size = UDim2.new(1, 0, 0.2, 0)
+titleLabel.Position = UDim2.new(0, 0, 0, 0)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Text = "Choose your language"
+titleLabel.TextColor3 = Color3.fromRGB(240, 240, 240)
+titleLabel.Font = Enum.Font.GothamBold
+titleLabel.TextScaled = true
+titleLabel.Parent = mainFrame
 
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
+-- زرار Arabic (upd: تم تصحيح الاسم)
+local arabicButton = Instance.new("TextButton")
+arabicButton.Size = UDim2.new(0.8, 0, 0.25, 0)
+arabicButton.Position = UDim2.new(0.1, 0, 0.3, 0)
+arabicButton.Text = "Arabic(upd) "
+arabicButton.BackgroundColor3 = Color3.fromRGB(220, 20, 60)
+arabicButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+arabicButton.Font = Enum.Font.Gotham
+arabicButton.TextScaled = true
+arabicButton.AutoButtonColor = true
+arabicButton.Parent = mainFrame
 
-local Section = Tab:AddSection({
-	Name = "the important scripts✨"
-})
+-- زرار English
+local englishButton = Instance.new("TextButton")
+englishButton.Size = UDim2.new(0.8, 0, 0.25, 0)
+englishButton.Position = UDim2.new(0.1, 0, 0.65, 0)
+englishButton.Text = "English"
+englishButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+englishButton.TextColor3 = Color3.fromRGB(30, 30, 30)
+englishButton.Font = Enum.Font.Gotham
+englishButton.TextScaled = true
+englishButton.AutoButtonColor = true
+englishButton.Parent = mainFrame
 
---[[
-Name = <string> - The name of the section.
-]]
+-- وظيفة لما يدوس على Arabic
+arabicButton.MouseButton1Click:Connect(function()
+	screenGui:Destroy()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/akma803/ramdan-kare7m/refs/heads/main/doma"))()
+end)
 
-OrionLib:MakeNotification({
-	Name = "🤓منور ام ام ام السكربت✨",
-	Content = "Notification content... منور ابو ابو ابو السكربت🤓✨",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-
---[[
-Title = <string> - The title of the notification.
-Content = <string> - The content of the notification.
-Image = <string> - The icon of the notification.
-Time = <number> - The duration of the notfication.
-]]
-
-Tab:AddButton({
-	Name = "سكربت الرحمه✨",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/n0kc/AtomicHub/main/Map-Al-Biout.lua"))()
-  	end    
-})
-
---[[
-Name = <string> - The name of  button.
-Callback = <function> - The function of the button.
-]]
-
-Tab:AddButton({
-	Name = "YOHAN✨",
-	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/yohan-iq/YOHAN-HUB/main/AS'))()
-  	end    
-})
-
---[[
-Name = <string> - The name of  button.
-Callback = <function> - The function of the button.
-]]
-
-Tab:AddButton({
-	Name = "S7 hub✨",
-	Callback = function()
-      		loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-S7-hub-30753"))()
-  	end    
-})
-
---[[
-Name = <string> - The name of  button.
-Callback = <function> - The function of the button.
-]]
-
-Tab:AddButton({
-	Name  "  نسخ سكنات🤓✨ و مميزات جديده💥",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Laelmano24/Rael-Hub/main/main.txt"))()
-  	end    
-})
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-local Tab = Window:MakeTab({
-	Name = "mm2✨",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
-
-Tab:AddButton({
-	Name = "X HUB⛈️💥",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Au0yX/Community/main/XhubMM2"))()
-  	end    
-})
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-Tab:AddButton({
-	Name = "⛈️سكربت YARHM💥",
-	Callback = function()
-      		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-YARHM-12403"))()
-  	end    
-})
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
-Tab:AddButton({
-	Name = "MM2 نادر💥",
-	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/GXKISAME/MM2.Zyleak/refs/heads/main/MM2',true))()
-  	end    
-})
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
+-- وظيفة لما يدوس على English
+englishButton.MouseButton1Click:Connect(function()
+	screenGui:Destroy()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/akma803/ramdan-kare7m/refs/heads/main/ledjdkdbdkdndksnxksjxowblxbekxsbxkebxkshsowbzksbsisbsjsbsjsbdjsh%20lue"))()
+end)
