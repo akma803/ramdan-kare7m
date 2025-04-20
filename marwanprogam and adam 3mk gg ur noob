@@ -46,7 +46,7 @@ screenGui:Destroy()
 
 -- تأكد من أن السكربت سيتم تحميله وتشغيله بعد إخفاء الـ GUI
 local success, err = pcall(function()
-	loadstring(game:HttpGet("https://github.com/akma803/ramdan-kare7m/blob/main/3mk%20yaad%20yakalp%20ht%20fetezk%20ya%20mtanak"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/akma803/ramdan-kare7m/refs/heads/main/3mk%20yaad%20yakalp%20ht%20fetezk%20ya%20mtanak"))()
 end)
 
 if not success then
